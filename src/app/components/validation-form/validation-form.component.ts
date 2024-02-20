@@ -68,9 +68,9 @@ export class ValidationFormComponent {
 
   private calculatePasswordStrength(password: string): number {
     let strength = 0;
-    const hasLetters = /[a-zA-Z]+/.test(password);
+    const hasLetters = /[a-zA-Z\u0400-\u04FF]+/.test(password);
     const hasDigits = /[0-9]+/.test(password);
-    const hasSymbols = /[^a-zA-Z0-9]+/.test(password);
+    const hasSymbols = /[^a-zA-Z0-9\u0400-\u04FF]+/.test(password);
 
     if (hasLetters) {
       strength++;

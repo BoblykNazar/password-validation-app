@@ -1,0 +1,28 @@
+<section class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="text-center">
+    <div class="card shadow card">
+      <div class="card-body p-4">
+        <h1 class="h3 mb-5 fw-normal">Password validation</h1>
+        <form>
+          <div class="form-floating mb-2">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              name="password"
+              aria-label="Password"
+              [formControl]="password"
+            >
+          </div>
+          <div class="d-flex justify-content-between mt-2">
+            <div
+              *ngFor="let bar of strengthBars"
+              class="flex-grow-1 bar"
+              [ngClass]="bar.color"
+            ></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

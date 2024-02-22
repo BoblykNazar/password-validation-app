@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
-
 enum Colors {
 	GRAY = 'bg-secondary',
 	YELLOW = 'bg-warning',
@@ -16,11 +15,10 @@ enum Colors {
 })
 
 export class ValidationFormComponent {
-  password = new FormControl('',[
+  password = new FormControl('', [
     Validators.required,
     Validators.minLength(8)
-  ]
-  );
+  ]);
 
   strengthBars = [
     { color: Colors.GRAY },
@@ -35,7 +33,6 @@ export class ValidationFormComponent {
       }
     });
   }
-
 
   private updateStrengthBars(value: string): void {
     this.strengthBars.forEach(bar => bar.color = Colors.GRAY);
